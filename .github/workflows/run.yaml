@@ -31,7 +31,9 @@ jobs:
         with:
           name: hello_world
 
+      - name: Change directory to bin
+        run: cd ./bin
+
       - name: Deploy
         run: |
-          chmod +x hello_world
           ./hello_world
