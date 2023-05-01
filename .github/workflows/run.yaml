@@ -34,8 +34,8 @@ jobs:
         with:
           name: hello_world
 
-      - name: Change directory to bin
-        run: cd ./bin
+      - name: Change directory to src
+        run: cd ./src
 
       - name: Deploy
         run: |
