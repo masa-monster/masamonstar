@@ -17,4 +17,4 @@ jobs:
       working-directory: ./src
     - name: Execute binary
       run: ./hello_world
-      working-directory: ./bin
+      working-directory: ./src
