@@ -1,3 +1,3 @@
 #!/bin/sh
 
-gcc -o ./hello_world main.c
+gcc -o ./bin/hello_world main.c
