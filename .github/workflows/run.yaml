@@ -30,7 +30,7 @@ jobs:
 
     steps:
       - name: Show Current Directory
-        run: pwd
+        run: tree .
 
       - name: Download Artifact
         uses: actions/download-artifact@v2
