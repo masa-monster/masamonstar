@@ -21,6 +21,9 @@ jobs:
           name: hello_world
           path: ./src
 
+      - name: Show Current Directory
+        run: pwd
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -35,7 +38,7 @@ jobs:
           name: hello_world
 
       - name: Change directory to src
-        run: cd ./src
+        run: cd /home/runner/work/masamonstar/masamonstar/src
 
       - name: Deploy
         run: |
