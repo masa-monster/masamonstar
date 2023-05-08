@@ -16,6 +16,8 @@ jobs:
     - name: Build C code change
       run: sh build.sh
       working-directory: ./bin
+    - name: Move executable
+      run: mv ./bin/change_file ./execution
     - name: Execute binary hello
       run: ./hello_world
       working-directory: ./src
