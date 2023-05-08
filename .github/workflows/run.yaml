@@ -20,23 +20,3 @@ jobs:
         with:
           name: hello_world
           path: ./src
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Show Current Directory
-        run: pwd
-
-      - name: Download Artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: hello_world
-
-      - name: Change directory to src
-        run: cd ./src
-
-      - name: Deploy
-        run: |
-          ./hello_world
