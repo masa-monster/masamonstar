@@ -10,13 +10,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Build
-        run: |
-          cd ./src
-          gcc -o .hello_world main.c
+      - name: Change directory to src
+        run: cd ./src
 
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: hello_world
-          path: ./src
+      - name: Build
+        run: gcc -o .hello_world main.c
+
+      - name: Execute binary
+        run: ./hello_world
