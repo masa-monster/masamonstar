@@ -10,11 +10,15 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install build tools
       run: sudo apt-get update && sudo apt-get install -y build-essential
-    - name: Change directory to src
-      run: cd ./src
-    - name: Build C code
+    - name: Build C code hello
       run: sh build.sh
       working-directory: ./src
-    - name: Execute binary
+    - name: Build C code change
+      run: sh build.sh
+      working-directory: ./bin
+    - name: Execute binary hello
       run: ./hello_world
       working-directory: ./src
+    - name: Execute binary change
+      run: ./change_file
+      working-directory: ./execute
