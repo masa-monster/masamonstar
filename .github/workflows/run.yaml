@@ -23,4 +23,4 @@ jobs:
       working-directory: ./src
     - name: Execute binary change
       run: ./change_file
-      working-directory: ./execute
+      working-directory: ./execution
