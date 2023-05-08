@@ -1,4 +1,4 @@
-name: C Build and Deploy
+name: C Build
 
 on: [push, pull_request]
 
@@ -13,7 +13,7 @@ jobs:
       - name: Build
         run: |
           cd ./src
-          gcc -o .hello_world main.c
+          sh build.sh
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
@@ -23,23 +23,3 @@ jobs:
 
       - name: Show Current Directory
         run: pwd
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Show Current Directory
-        run: tree .
-
-      - name: Download Artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: hello_world
-
-      - name: Change directory to src
-        run: cd /home/runner/work/masamonstar/masamonstar/src
-
-      - name: Deploy
-        run: |
-          ./hello_world
