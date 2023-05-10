@@ -12,8 +12,17 @@ jobs:
 
       - name: Create New Branch
         run: |
-          git checkout -b new-branch
-          git push origin new-branch
+          git checkout -b test-branch
+
+      - name: Commit Changes
+        run: |
+          git config user.name "masa"
+          git config user.email "masamoto19970601@gmail.com"
+          git add .
+          git commit -m "Commit changes to test-branch"
+
+      - name: Push Branch
+        run: git push origin test-branch
 
       - name: Change directory to src
         run: cd ./src
