@@ -10,6 +10,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Create New Branch
+        run: |
+          git checkout -b new-branch
+          git push origin new-branch
+
       - name: Change directory to src
         run: cd ./src
 
