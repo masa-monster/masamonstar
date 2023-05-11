@@ -1,6 +1,4 @@
-[
-    {
-        "branch": "test_dir",
-        "app_name": "masa"
-    }
-] 
+{
+    "branch": "test_dir",
+    "app_name": "masa"
+}
