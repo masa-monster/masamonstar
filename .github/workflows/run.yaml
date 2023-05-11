@@ -16,7 +16,7 @@ jobs:
 
       - name: Read branch name from JSON
         id: read-json
-        run: branch=$(jq -r '.branch' file.json)
+        run: branch=$(jq -r '.branch' ./src/file.json)
 
       - name: Checkout code
         uses: actions/checkout@v2
