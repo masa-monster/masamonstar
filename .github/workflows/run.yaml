@@ -7,6 +7,9 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
+      - name: Checkout JSON file
+        uses: actions/checkout@v2
+
       - name: Show current directory
         run: |
           echo "Current directory: $(pwd)"
