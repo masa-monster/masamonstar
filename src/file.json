@@ -1,5 +1,6 @@
 [
     {
-        "branch": "test_dir"
+        "branch": "test_dir",
+        "app_name": "masa"
     }
 ] 
