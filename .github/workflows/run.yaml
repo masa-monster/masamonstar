@@ -10,7 +10,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          ref: test-dir
+          ref: test_dir
 
       - name: Change directory to src
         run: cd ./src
