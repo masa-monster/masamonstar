@@ -20,7 +20,7 @@ jobs:
 
       - name: Create branch
         run: |
-          branch_name="Auto/masa/${{ steps.date.outputs.date }}"
+          branch_name="main/masa/${{ steps.date.outputs.date }}"
           git checkout -b $branch_name
           git push origin $branch_name
 
