@@ -14,14 +14,15 @@ jobs:
         run: |
           echo "Current directory: $(pwd)"
 
-      - name: Read branch name from JSON
-        id: read-json
-        run: branch=$(jq -r '.branch' ./src/file.json)
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +%Y-%m-%d)"
 
-      - name: Checkout code
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ steps.read-json.outputs.branch }}
+      - name: Create branch
+        run: |
+          branch_name="Auto/masa/${{ steps.date.outputs.date }}"
+          git checkout -b $branch_name
+          git push origin $branch_name
 
       - name: Install build tools
         run: sudo apt-get update && sudo apt-get install -y build-essential
@@ -33,3 +34,7 @@ jobs:
       - name: Execute binary
         run: ./hello_world
         working-directory: ./src
+
+      - name: push branch
+        run: |
+          git push origin $branch_name
