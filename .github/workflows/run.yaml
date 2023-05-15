@@ -23,7 +23,7 @@ jobs:
       - name: Create Directory and File
         run: |
           mkdir artifact
-          echo 'printf("Hello world");' > directory/sample.c
+          echo 'printf("Hello world");' > artifact/sample.c
           
       - name: push branch
         run: |
