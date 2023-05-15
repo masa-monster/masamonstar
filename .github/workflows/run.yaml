@@ -24,7 +24,11 @@ jobs:
         run: |
           mkdir artifact
           echo 'printf("Hello world");' > artifact/sample.c
-          
+
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +%Y-%m-%d)"
+
       - name: push branch
         run: |
           branch_name_date="Auto/momotetu/${{ steps.date.outputs.date }}"
