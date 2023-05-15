@@ -31,5 +31,5 @@ jobs:
 
       - name: push branch
         run: |
-          branch_name_date="Auto/momotetu/${{ steps.date.outputs.date }}"
+          branch_name_date="Auto/test/${{ steps.date.outputs.date }}"
           git push origin $branch_name_date
