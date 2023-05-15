@@ -37,4 +37,4 @@ jobs:
 
       - name: push branch
         run: |
-          git push origin $branch_name_date
+          git push --set-upstream origin $branch_name_date
