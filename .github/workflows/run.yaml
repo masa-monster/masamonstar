@@ -1,22 +1,12 @@
-name: Input Information
+name: workflow_dispatch sample 1
 
 on:
-  push:
-    inputs:
-      branch_name:
-        description: 'Enter the branch name'
-        required: true
+  workflow_dispatch:
 
 jobs:
-  create-branch:
+  printLog:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Create branch
-        run: |
-          branch_name=${{ github.event.inputs.branch_name }}
-          git checkout -b $branch_name
-          git push origin $branch_name
+    - name: print log
+      run: echo "Hello!"
