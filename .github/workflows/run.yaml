@@ -1,34 +1,12 @@
-name: C Build and Deploy
+name: workflow_dispatch sample 1
 
-on: [push, pull_request]
+on:
+  workflow_dispatch:
 
 jobs:
-  build:
+  printLog:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Create New Branch
-        run: |
-          git checkout -b test-branch
-
-      - name: Commit Changes
-        run: |
-          git config user.name "masa"
-          git config user.email "masamoto19970601@gmail.com"
-          git add .
-          git commit -m "Commit changes to test-branch"
-
-      - name: Push Branch
-        run: git push origin test-branch
-
-      - name: Change directory to src
-        run: cd ./src
-
-      - name: Build
-        run: gcc -o hello_world main.c
-
-      - name: Execute binary
-        run: ./hello_world
+    - name: print log
+      run: echo "Hello!"
