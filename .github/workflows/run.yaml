@@ -43,3 +43,4 @@ jobs:
             echo "Branch $branch_name_date already exists."
             exit 1
           fi
+          git push origin $branch_name_date
