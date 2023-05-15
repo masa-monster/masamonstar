@@ -1,25 +1,22 @@
-name: C Build and Deploy
+name: Input Information
 
 on:
   workflow_dispatch:
     inputs:
-      input_base:
-        description: 'If you want to do a base'
+      branch_name:
+        description: 'Enter the branch name'
         required: true
 
 jobs:
-  build:
+  create-branch:
     runs-on: ubuntu-20.04
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Change directory to src
-        run: cd ./src
-
-      - name: Build
-        run: gcc -o hello_world main.c
-
-      - name: Execute binary
-        run: ./hello_world
+      - name: Create branch
+        run: |
+          branch_name=${{ github.event.inputs.branch_name }}
+          git checkout -b $branch_name
+          git push origin $branch_name
