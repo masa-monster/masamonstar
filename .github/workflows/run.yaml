@@ -29,18 +29,12 @@ jobs:
         id: date
         run: echo "::set-output name=date::$(date +%Y-%m-%d)"
 
-      - name: push branch
+      - name: fetch check branch
         run: |
           branch_name_date="Auto/test/${{ steps.date.outputs.date }}"
 
-          # リモートリポジトリにブランチが存在するか確認します
-          git fetch origin $branch_name_date
+          git checkout -b $branch_name_date
 
-          # ブランチが存在しない場合は、作成してから切り替えます
-          if [ $? -ne 0 ]; then
-            git checkout -b $branch_name_date
-          else
-            echo "Branch $branch_name_date already exists."
-            exit 1
-          fi
+      - name: push branch
+        run: |
           git push origin $branch_name_date
