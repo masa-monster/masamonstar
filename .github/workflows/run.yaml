@@ -1,11 +1,6 @@
 name: Input Information
 
-on:
-  workflow_dispatch:
-    inputs:
-      branch_name:
-        description: 'Enter the branch name'
-        required: true
+on: push
 
 jobs:
   create-branch:
