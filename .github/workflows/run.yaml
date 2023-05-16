@@ -10,11 +10,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Create branch
-        run: |
-          branch_name="${{ github.event.inputs.branch_name }}"
-          git checkout -b $branch_name
-
       - name: Create Directory and File
         run: |
           mkdir artifact
