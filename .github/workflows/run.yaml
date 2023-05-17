@@ -23,3 +23,7 @@ jobs:
         run: |
           branch_name_date="Auto/momotetu/${{ steps.date.outputs.date }}"
           git checkout -b $branch_name_date
+
+       - name: Get current date
+        id: date3
+        run: echo "::set-output name=date::$(date +%Y-%m-%d-%h-%m-%s)"     
